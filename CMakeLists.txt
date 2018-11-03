@@ -2,6 +2,11 @@
 cmake_minimum_required(VERSION 3.5)
 project(boost)
 
+LINK_DIRECTORIES(${CMAKE_SOURCE_DIR}/lib)
+
+SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
+SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
+
 macro(find_package NAME)
     if(NOT "${NAME}" MATCHES "^boost_.*$" AND NOT "${NAME}" STREQUAL BCM)
         _find_package(${ARGV})
